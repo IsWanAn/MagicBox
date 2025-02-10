@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\ThemControler.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\Webs\BaseControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\Webs\CopilotControler.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\Webs\GPTControler.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\Webs\StringFormatControler.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>
