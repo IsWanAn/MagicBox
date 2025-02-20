@@ -1,10 +1,14 @@
 ﻿using Microsoft.Win32;
+using System.Resources;
 using System.Runtime.InteropServices;
 
 namespace IceMagicBox.Utils
 {
     public class WallpaperChanger
     {
+
+        private  static readonly string BgPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Wallpaper");
+
         private const int SPI_SETDESKWALLPAPER = 0x0014;
         private const int SPIF_UPDATEINIFILE = 0x01;
         private const int SPIF_SENDCHANGE = 0x02;
@@ -16,6 +20,55 @@ namespace IceMagicBox.Utils
             string path = System.IO.Path.GetTempPath() + "Wallpaper.bmp";
             bitmap.Save(path, System.Drawing.Imaging.ImageFormat.Bmp);
             SystemParametersInfo(SPI_SETDESKWALLPAPER, 0, path, SPIF_UPDATEINIFILE | SPIF_SENDCHANGE);
+        }
+
+
+        public static void AddWallPapers(List<string> fileNames) {
+
+            if (!Directory.Exists(BgPath))
+            {
+                Directory.CreateDirectory(BgPath);
+            }
+
+            foreach (var fileName in fileNames)
+            {
+                var imagePath = Path.Combine(BgPath, Path.GetFileName(fileName));
+                Image img = Image.FromFile(fileName);
+                img.Save(imagePath);
+            }
+        }
+
+        public static List<(Image,string)> GetWallPapers() {
+
+            List<(Image, string)> images = new List<(Image, string)>();
+
+            string path = "Wallpaper";
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
+            // 获取所有图像文件（支持常见格式）
+            string[] imageExtensions = { ".jpg", ".jpeg", ".png", ".bmp", ".gif", ".tiff" };
+            string[] files = Directory.GetFiles(path)
+                                      .Where(f => imageExtensions.Contains(Path.GetExtension(f).ToLower()))
+                                      .ToArray();
+
+            if (files.Length == 0)
+            {
+                return images;
+            }
+            foreach (var item in files)
+            {
+                images.Add((Image.FromFile(item), item));
+            }
+            return images;
+        }
+
+
+        
+        public static void RemoveWallPaper(string fileName) {
+
+            File.Delete(fileName);
         }
     }
 

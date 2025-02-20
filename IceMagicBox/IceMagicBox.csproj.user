@@ -10,13 +10,16 @@
     <Compile Update="Views\Webs\BaseControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Views\Webs\CopilotControler.cs">
+    <Compile Update="Views\Webs\CopilotController.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Views\Webs\GPTControler.cs">
+    <Compile Update="Views\Webs\DeepSeekController.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Views\Webs\StringFormatControler.cs">
+    <Compile Update="Views\Webs\GPTController.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\Webs\StringFormatController.cs">
       <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>
