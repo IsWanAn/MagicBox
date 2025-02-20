@@ -1,8 +1,9 @@
 using AntdUI;
 using IceMagicBox.Utils;
 using IceMagicBox.Views;
+using IceMagicBox.Views.Webs;
 using Microsoft.Win32;
-using Sunny.UI;
+
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace IceMagicBox
@@ -90,16 +91,19 @@ namespace IceMagicBox
             switch (name)
             {
                 case "Copilot":
-                    control = new CopilotControler();
+                    control = new CopilotController();
                     break;
                 case "ChatGPT":
-                    control = new GPTControler();
+                    control = new GPTController();
                     break;
                 case "StringFormat":
-                    control = new StringFormatControler();
+                    control = new StringFormatController();
                     break;
                 case "Them":
                     control = new ThemControler(this);
+                    break;
+                case "DeepSeek":
+                    control = new DeepSeekController();
                     break;
                 default:
                     break;
