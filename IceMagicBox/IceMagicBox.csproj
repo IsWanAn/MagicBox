@@ -16,6 +16,7 @@
   <ItemGroup>
     <PackageReference Include="AntdUI" Version="1.8.5" />
     <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.2957.106" />
+    <PackageReference Include="SevenZipExtractor" Version="1.0.19" />
   </ItemGroup>
 
   <ItemGroup>
@@ -37,10 +38,17 @@
     <None Update="Extensions\Web\AdGuard.crx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Extensions\Web\AdGuard\bgnkhhnnamicmpeenaelnjfhikgbkllg.zip">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Extensions\Web\AdGuard\" />
+    <None Remove="C:\Users\A428108\.nuget\packages\sevenzipextractor\1.0.19\build\x64\7z.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\A428108\.nuget\packages\sevenzipextractor\1.0.19\build\x86\7z.dll" />
   </ItemGroup>
 
 </Project>
