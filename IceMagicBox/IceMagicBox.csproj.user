@@ -4,6 +4,9 @@
     <Compile Update="Main.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Views\HappyView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Views\ThemControler.cs">
       <SubType>UserControl</SubType>
     </Compile>

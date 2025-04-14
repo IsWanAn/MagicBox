@@ -103,6 +103,9 @@ namespace IceMagicBox
                 case "DeepSeek":
                     control = new DeepSeekController();
                     break;
+                case "Fun":
+                    control = new HappyView();
+                    break;
                 default:
                     break;
             }
