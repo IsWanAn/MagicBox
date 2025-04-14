@@ -1,13 +1,11 @@
-﻿using Microsoft.Win32;
-using System.Resources;
-using System.Runtime.InteropServices;
+﻿using System.Runtime.InteropServices;
 
 namespace IceMagicBox.Utils
 {
     public class WallpaperChanger
     {
 
-        private  static readonly string BgPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Wallpaper");
+        private static readonly string BgPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Wallpaper");
 
         private const int SPI_SETDESKWALLPAPER = 0x0014;
         private const int SPIF_UPDATEINIFILE = 0x01;
@@ -23,7 +21,8 @@ namespace IceMagicBox.Utils
         }
 
 
-        public static void AddWallPapers(List<string> fileNames) {
+        public static void AddWallPapers(List<string> fileNames)
+        {
 
             if (!Directory.Exists(BgPath))
             {
@@ -38,7 +37,8 @@ namespace IceMagicBox.Utils
             }
         }
 
-        public static List<(Image,string)> GetWallPapers() {
+        public static List<(Image, string)> GetWallPapers()
+        {
 
             List<(Image, string)> images = new List<(Image, string)>();
 
@@ -65,8 +65,9 @@ namespace IceMagicBox.Utils
         }
 
 
-        
-        public static void RemoveWallPaper(string fileName) {
+
+        public static void RemoveWallPaper(string fileName)
+        {
 
             File.Delete(fileName);
         }

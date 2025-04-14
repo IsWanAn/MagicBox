@@ -4,8 +4,6 @@ using IceMagicBox.Views;
 using IceMagicBox.Views.Webs;
 using Microsoft.Win32;
 
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-
 namespace IceMagicBox
 {
     public partial class Main : AntdUI.Window

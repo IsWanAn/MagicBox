@@ -44,13 +44,13 @@ namespace IceMagicBox.Views
         {
             var extensionId = "bgnkhhnnamicmpeenaelnjfhikgbkllg";
             var extensions = await webView21.CoreWebView2.Profile.GetBrowserExtensionsAsync();
-            var archivepath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $"Extensions/Web/AdGuard/{extensionId}.zip") ;
+            var archivepath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $"Extensions/Web/AdGuard/{extensionId}.zip");
             var extensionPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $"UserDataFolder/EBWebView/Default/Extensions/{extensionId}");
             if (!Directory.Exists(extensionPath))
             {
                 Directory.CreateDirectory(extensionPath);
             }
-            SevenZipUtill.Extract(archivepath,  extensionPath);
+            SevenZipUtill.Extract(archivepath, extensionPath);
             bool isInstalled = extensions.Any(ext => ext.Id == extensionId);
             if (!isInstalled)
             {
