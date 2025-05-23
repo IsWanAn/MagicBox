@@ -2,6 +2,7 @@ using AntdUI;
 using IceMagicBox.Utils;
 using IceMagicBox.Views;
 using IceMagicBox.Views.Webs;
+using IceMagicBox.Views.Webs.Translatation;
 using Microsoft.Win32;
 
 namespace IceMagicBox
@@ -105,6 +106,9 @@ namespace IceMagicBox
                     break;
                 case "Fun":
                     control = new HappyView();
+                    break;
+                case "Translation":
+                    control = new TranslateView();
                     break;
                 default:
                     break;

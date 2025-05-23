@@ -25,5 +25,8 @@
     <Compile Update="Views\Webs\StringFormatController.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="Views\Webs\Translation\TranslateView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
   </ItemGroup>
 </Project>
